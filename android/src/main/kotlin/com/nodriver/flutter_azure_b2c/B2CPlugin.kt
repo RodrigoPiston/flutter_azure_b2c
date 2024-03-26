@@ -197,11 +197,10 @@ class B2CPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     override fun onDetachedFromActivity() {
-        TODO("Not yet implemented")
     }
 
     override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-        TODO("Not yet implemented")
+        activity = binding.activity
     }
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
@@ -209,6 +208,6 @@ class B2CPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     override fun onDetachedFromActivityForConfigChanges() {
-        TODO("Not yet implemented")
+        onDetachedFromActivity();
     }
 }
