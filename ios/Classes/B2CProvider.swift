@@ -218,11 +218,11 @@ class B2CProvider {
      * @return a list of stored user represented by their subjects
      */
     func getSubjects() -> [String] {
-        var subjects: [String] = []
-        users!.forEach { user in
-            if let subject = user.subject { subjects.append(subject) }
+        guard let users = users else {
+            print("Error: users es nil.")
+            return []
         }
-        return subjects
+        return users.compactMap { $0.subject }
     }
     
     func hasSubject(subject: String) -> Bool {
