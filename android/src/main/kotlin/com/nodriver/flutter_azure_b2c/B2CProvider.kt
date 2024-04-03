@@ -430,11 +430,11 @@ class B2CProvider(
     private fun setHostAndTenantFromAuthority(tag: String, authority: Authority) {
         var parts = authority.authorityURL.toString().split(Regex("https://|/"))
         hostName = parts[1]
-        tenantName = parts[2]
+        tenantName = parts[3]
         Log.d("B2CProvider", "[$tag] host: $hostName, tenant: $tenantName")
     }
 
     private fun getAuthorityFromPolicyName(policyName: String) : String{
-        return "https://$hostName/$tenantName/$policyName/"
+        return "https://$hostName/tfp/$tenantName/$policyName/"
     }
 }
